@@ -24,19 +24,52 @@ const list = [
         "name": "Aaron Stack",
         "description": "",
         "modified": "1969-12-31T19:00:00-0500"               
+    },
+    {
+        "id": 1010699,
+        "name": "Aaron Stack",
+        "description": "",
+        "modified": "1969-12-31T19:00:00-0500"               
+    },
+    {
+        "id": 1010699,
+        "name": "Aaron Stack",
+        "description": "",
+        "modified": "1969-12-31T19:00:00-0500"               
+    }
+    ,
+    {
+        "id": 1010699,
+        "name": "Aaron Stack",
+        "description": "",
+        "modified": "1969-12-31T19:00:00-0500"               
+    }
+    ,
+    {
+        "id": 1010699,
+        "name": "Aaron Stack",
+        "description": "",
+        "modified": "1969-12-31T19:00:00-0500"               
+    }
+    ,
+    {
+        "id": 1010699,
+        "name": "Aaron Stack",
+        "description": "",
+        "modified": "1969-12-31T19:00:00-0500"               
     }
 ]
 
 const charactersController = function($scope, $location, charactersService) {
     
-    $scope.itemsPerPage = 4;
-    $scope.currentPage = 1;
+    
     $scope.nameStartsWith = '';
     $scope.characters = [];
     $scope.loading = false;
     
     $scope.totalCharacters = 0;
-    $scope.usersPerPage = 10; 
+    $scope.itemsPerPage = 8;
+    $scope.currentPage = 1;    
 
     $scope.pageChanged = function(newPage) {        
         $scope.currentPage = newPage;
@@ -45,16 +78,16 @@ const charactersController = function($scope, $location, charactersService) {
     };      
 
     const getCharacters = function(){
-        $scope.characters = list;
-        // $scope.loading = true;
-        // const params = getDefaultParams();
-        // if($scope.nameStartsWith !== ''){            
-        //     params.nameStartsWith = $scope.nameStartsWith;           
-        // }
-        // charactersService.getCharacters(params).success(onSuccess);
+        //$scope.characters = list;
+        $scope.loading = true;
+        const params = getDefaultParams();
+        if($scope.nameStartsWith !== ''){            
+            params.nameStartsWith = $scope.nameStartsWith;           
+        }
+        charactersService.getCharacters(params).success(onSuccess);
     };
 
-    $scope.init = function () {           
+    $scope.init = function () {
         getCharacters();
     };
 
@@ -64,8 +97,8 @@ const charactersController = function($scope, $location, charactersService) {
     }
 
     $scope.getImageUrl = function (character) { 
-        //return character.thumbnail.path + '/' + 'portrait_uncanny' + '.' + character.thumbnail.extension;
-        return "https://www.hypeness.com.br/1/2018/12/imagens-surreais7.jpg";
+        return character.thumbnail.path + '/' + 'portrait_uncanny' + '.' + character.thumbnail.extension;
+        //return "https://www.hypeness.com.br/1/2018/12/imagens-surreais7.jpg";
     };
 
     $scope.viewDetail = function (characterId) { 
@@ -73,13 +106,12 @@ const charactersController = function($scope, $location, charactersService) {
     };
     
     const getDefaultParams = function () {
-        return { limit: $scope.itemsPerPage, offset: $scope.currentPage - 1};
+        return { limit: $scope.itemsPerPage, offset: $scope.itemsPerPage * ($scope.currentPage - 1)};
     };
 
     const onSuccess = function (response) {
         $scope.totalCharacters = response.data.total
-        $scope.characters = response.data.results;
-        console.log($scope.characters);
+        $scope.characters = response.data.results;        
         $scope.loading = false;          
     }; 
         

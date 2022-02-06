@@ -12,4 +12,4 @@ res.sendFile(path.join(`${__dirname}/index.html`));
 });
 
 app.listen(process.env.PORT || 8080);
-console.log(process.env.PORT)
+console.log("Servidor iniciado com sucesso")
