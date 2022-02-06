@@ -55,6 +55,10 @@
     font-size: 18px;   
 }
 
+.header div span:first-child {
+    cursor: pointer;
+}
+
 .header div span:last-child {
     cursor: pointer;
 }
