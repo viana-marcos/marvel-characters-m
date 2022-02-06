@@ -1,6 +1,7 @@
 const charactersService = function($http, env) {
 
     const CHARACTERS_URL = '/characters';
+    const COMICS_URL = '/comics';
 
     return { 
 
@@ -30,6 +31,15 @@ const charactersService = function($http, env) {
               });    
             
         },
+
+        getComicsByCharacterId: function (characterId, params){    
+            return $http({
+                method: 'GET',
+                url: env.BASE_URL + CHARACTERS_URL + '/' + characterId + '/' + COMICS_URL,
+                params                
+              });    
+            
+        }
        
         
     }   

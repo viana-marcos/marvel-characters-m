@@ -1,27 +1,23 @@
 <div ng-include="'templates/header.html'" ng-controller="HeaderController as vm"></div>
+<div class="input-group input-group-lg search">
+    <input type="text" class="form-control" ng-model='nameStartsWith' ng-model-options='{ debounce: 2000 }'
+        ng-change='filterCharacters()' placeholder="Procurar" aria-describedby="sizing-addon1">
+</div>
 
 <div ng-init="init()" class="characters">
-    <div class="input-group input-group-lg search">
-        <span class="input-group-addon" id="sizing-addon1">Digite um nome personagem</span>
-        <input type="text" class="form-control" ng-model='nameStartsWith'
-        ng-model-options='{ debounce: 2000 }'
-        ng-change='filterCharacters()' placeholder="Procurar" aria-describedby="sizing-addon1">
-    </div>   
-
     <div class="wrapper">
 
-        <div class="panel panel-default item-grid" dir-paginate="character in characters | itemsPerPage: itemsPerPage" 
-        total-items="totalCharacters" current-page="currentPage" ng-click="viewDetail(character.id)">
+        <div class="panel panel-default item-grid" dir-paginate="character in characters | itemsPerPage: itemsPerPage"
+            total-items="totalCharacters" current-page="currentPage" ng-click="viewDetail(character.id)">
             <div class="panel-heading">{{character.name }}</div>
             <div class="panel-body">
                 <img ng-src="{{getImageUrl(character)}}" width="280" height="430" alt="Description" />
             </div>
-        </div>   
-       
-        
-    </div>
-    <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>    
+        </div>
 
+    </div>
+</div>
+<div class="paginationCustom">
+    <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
 </div>
 <div ng-include="'templates/loadingSpinner.html'" ng-show="loading"></div>
-
