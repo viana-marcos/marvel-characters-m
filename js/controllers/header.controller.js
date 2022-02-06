@@ -1,7 +1,7 @@
 
 
 
-const headerController = function($scope, $timeout, $location, userService) {
+const headerController = function($scope, $location, userService) {
     
     $scope.userName = "";
 
@@ -14,6 +14,10 @@ const headerController = function($scope, $timeout, $location, userService) {
         $scope.userName = "";     
         userService.logout();           
         $location.path("/login");       
+    }
+
+    $scope.redirectToCharacters = function() {
+        $location.path("/characters");
     }
 }
 
