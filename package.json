@@ -1,0 +1,13 @@
+{
+  "name": "nome-do-pacote",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}

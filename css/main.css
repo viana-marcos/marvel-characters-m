@@ -1,0 +1,143 @@
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.c-loader {
+    background-color: rgb(143, 131, 131);
+    opacity: 0.2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;   
+}
+
+.c-loader div {
+    display: block;
+    animation: spin 2s linear infinite;
+    position: relative;
+    border: 6px solid #eee1e1;
+    border-radius: 50%;
+    border-top-color: #51d4db;
+    top: 50%;
+    left: 50%;
+    height: 50px;
+    width: 50px;
+}  
+
+.header{
+    padding-top: 12px;
+    padding-bottom: 5px;
+    background-color: #151515;    
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+    height: 52px;
+    color: white;
+}
+
+@media screen and (max-width: 375px) {
+    .header {
+        padding-top: 12px;
+        padding-bottom: 5px;           
+        display: flex;    
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: red;
+        
+        height: 52px;
+        color: white;
+    }
+  }
+
+.header div span {
+    margin-right: 10px;
+    font-size: 18px;   
+}
+
+.header div span:last-child {
+    cursor: pointer;
+}
+
+.header div:last-child {
+    margin-right: 10px;    
+}
+
+.register-form {
+    width: 300px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto; 
+
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-form {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto; 
+
+}
+
+.error{
+    color: brown;
+    font-size: 12px;
+}
+
+.characters {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;   
+}
+
+.search{
+    margin-top: 60px;
+    
+}
+
+.wrapper {
+
+    padding-top: 60px;     
+    display: inline-grid;
+    grid-column-gap: 2em;
+    grid-row-gap: 1em;
+    grid-template-columns: repeat(4, 1fr);    
+}
+
+.wrapper .item-grid {
+    width: 312px;
+    cursor: pointer;
+}
+
+.character-detail{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.character-detail .panel-heading div {
+    display: inline;
+    text-align: center;   
+}
+
+.character-detail .panel-heading div:last-child{
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.title-comics{    
+    font-weight: bold;
+    font-size: 16px;
+    
+}

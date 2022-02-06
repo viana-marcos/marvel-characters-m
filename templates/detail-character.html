@@ -1,0 +1,23 @@
+<div ng-include="'templates/header.html'" ng-controller="HeaderController as vm"></div>
+
+<div ng-init="init()" class="character-detail">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div>
+                <img ng-src="{{getImageUrl(character)}}" alt="Description" width="100" height="70"/>                
+            </div>
+            <div>
+                {{ character.name }}
+            </div>
+           
+        </div>
+        <div class="panel-body">
+            <div class="title-comics">Revistas: </div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="(key, comic) in character.comics.items">{{ comic.name }}</li>
+                
+              </ul>
+        </div>
+      </div>
+</div>
+<div ng-include="'templates/loadingSpinner.html'" ng-show="loading"></div>

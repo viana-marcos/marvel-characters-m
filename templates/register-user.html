@@ -1,0 +1,35 @@
+<div ng-include="'templates/header.html'" ng-controller="HeaderController as vm"></div>
+
+<div class="register-form">
+
+    <form name="registerForm" ng-submit="register()">
+
+        <div ng-show="message !== ''" class="alert alert-danger" role="alert">{{ message }}</div>       
+        <div class="form-group">
+            <label for="name">Nome completo</label>
+            <input type="text" class="form-control" name="name" ng-model="user.name" placeholder="Nome">            
+            
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" id="email" ng-model="user.email" placeholder="example@domain.com" required>
+            <span class="error" ng-show="registerForm.email.$error.email">Email inválido</span>	
+           
+        </div>
+        <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" class="form-control" id="password" ng-model="user.password" placeholder="Password"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmation-password">Confirmar Senha</label>
+            <input type="password" class="form-control" name="confirmationPassword" ng-model="user.confirmationPassword"
+                placeholder="Confirmar Senha" required>
+                <span class="error" ng-show="registerForm.confirmationPassword.$dirty  && user.password !== user.confirmationPassword">Senha de confirmação não confere</span>	
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-disabled="registerForm.$invalid">Submit</button>
+        <button type="button" class="btn btn-default" ng-click="reset()">Limpar</button>
+    </form>
+</div>
