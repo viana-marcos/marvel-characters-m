@@ -46,6 +46,10 @@
     color: white;
 }
 
+.name-user{
+    width: 200px;
+}
+
 .header div span {
     margin-right: 10px;
     font-size: 18px;   
@@ -54,6 +58,12 @@
 .header div span:last-child {
     cursor: pointer;
 }
+
+@media screen and (max-width: 400px) {
+    .header div span:last-child  {
+        margin-right: 0;
+    }
+  }
 
 .header div:last-child {
     margin-right: 10px;    

@@ -6,8 +6,9 @@
                     d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
             </svg></span>
     </div>
-    <div ng-show="userName !== ''">
-        <span>{{ userName }}</span>
+    <div ng-show="userName !== ''">        
+        <span class="glyphicon glyphicon-list" aria-hidden="true" ng-click="logout()"></span>
+        <span class="name-user">{{ userName }}</span>
         <span class="glyphicon glyphicon glyphicon-off" aria-hidden="true" ng-click="logout()"></span>
     </div>
 
