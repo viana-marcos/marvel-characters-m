@@ -22,11 +22,12 @@ const userService = function() {
         },
 
         addSession: function (user) {            
-            window.sessionStorage.setItem('user', JSON.stringify(user));
+            window.sessionStorage.setItem('user', JSON.stringify(user));            
         },
 
         getUserSession: function () {            
             const itemUser = window.sessionStorage.getItem('user');
+            
             return itemUser ? JSON.parse(itemUser) : null;
         },
 
