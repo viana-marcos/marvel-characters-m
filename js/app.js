@@ -29,7 +29,7 @@ app.service('userService', [userService]);
 app.service('charactersService', ['$http', 'env', charactersService]);
 
 // Controles
-app.controller('HeaderController', ['$scope', '$timeout','$location', 'userService', headerController]);
+app.controller('HeaderController', ['$scope', '$location', 'userService', headerController]);
 app.controller('MainController', ['$scope', '$timeout','$location', 'userService', mainController]);
 app.controller('LoginController', ['$scope', '$location', 'userService', loginController]);
 app.controller('RegisterUserController', ['$scope', '$location', 'userService', registerUserController]);
