@@ -1,5 +1,5 @@
 # marvel-characters-m
-<h1 align="center">Persogens Mavel</h1>
+<h1 align="center">Personagens Mavel</h1>
 
 <h3 align="center">Instalaçãos </h3>
 <p align="center">execute o comando "npm i" </p>
