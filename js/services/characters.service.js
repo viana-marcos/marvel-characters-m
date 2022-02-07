@@ -3,7 +3,7 @@ const charactersService = function($http, env) {
     const CHARACTERS_URL = '/characters';
     const COMICS_URL = '/comics';
 
-    return { 
+    return {
 
         getCharacters: function (params){    
             return $http({
@@ -39,8 +39,7 @@ const charactersService = function($http, env) {
                 params                
               });    
             
-        }
-       
+        }       
         
     }   
 

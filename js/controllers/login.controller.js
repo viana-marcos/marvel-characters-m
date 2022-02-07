@@ -30,6 +30,7 @@ const loginController = function ($scope, $location, userService) {
     $scope.register = function () {
         $location.path("/register-user");
     }
+    
 
 }
 

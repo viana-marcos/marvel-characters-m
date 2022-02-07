@@ -13,7 +13,7 @@ const mainController = function($scope, $location, userService) {
             $location.path("/login");
         }else{            
             $location.path("/characters");
-        }       
+        }
                
     } 
     

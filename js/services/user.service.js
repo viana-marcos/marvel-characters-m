@@ -1,8 +1,9 @@
-
-
 const userService = function() {
-
-    return {
+    return {  
+        
+        getTeste: function () {
+            return "Valor";
+        },
 
         findUserByEmail: function (email) {
             const users = this.getUsers();            
@@ -32,8 +33,8 @@ const userService = function() {
         },
 
        logout: function () {            
-            window.sessionStorage.clear();            
-        }
+            window.sessionStorage.clear();
+       }
     }
    
 
