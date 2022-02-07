@@ -8,4 +8,4 @@
 
 <h3 align="center">Execução dos testes unitários </h3>
 
-<p align="center">Via CMD executar o comando "npm test"</p>
+<p align="center">Via CMD executar o comando "npm test" ou "Karma start"</p>
