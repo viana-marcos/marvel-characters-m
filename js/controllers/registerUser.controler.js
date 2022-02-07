@@ -5,6 +5,7 @@ const registerUserController = function ($scope, $location, userService) {
 
     $scope.message = '';
     $scope.user = { name: '', email: '', password: '' };
+    
     $scope.reset = function () {
         $scope.user = { name: '', email: '', password: '', confirmationPassword: '' };
     };
